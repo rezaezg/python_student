@@ -1,4 +1,4 @@
-""" numerical triangle of height N-1
+""" numerical triangle of height N-1 and 1 <= N <= 9
 1
 22
 333
