@@ -1,23 +1,9 @@
-CSS colors are defined using a hexadecimal (HEX) notation for the combination of Red, Green, and Blue color values (RGB).
-
-Specifications of HEX Color Code
-
+""" CSS colors are defined using a hexadecimal (HEX) notation for the combination of Red, Green, and Blue color values (RGB).
 ■ It must start with a '#' symbol.
 ■ It can have  or  digits.
 ■ Each digit is in the range of  to . ( and ).
 ■  letters can be lower case. ( and  are also valid digits).
 
-Examples
-
-Valid Hex Color Codes
-#FFF 
-#025 
-#F0A1FB 
-
-Invalid Hex Color Codes
-#fffabg
-#abcf
-#12365erff
 You are given  lines of CSS code. Your task is to print all valid Hex Color Codes, in order of their occurrence from top to bottom.
 
 CSS Code Pattern
@@ -30,10 +16,6 @@ Input Format
 
 The first line contains , the number of code lines.
 The next  lines contains CSS Codes.
-
-Constraints
-
-
 
 Output Format
 
@@ -74,7 +56,16 @@ Hence, the valid color codes are:
 #ABC
 #fff
 
-Note: There are no comments ( // or /* */) in CSS Code.
+Note: There are no comments ( // or /* */) in CSS Code. """
+
+
+import re
+n = int(input())
+pattern = r'((?<!^)(#[a-fA-F0-9]{3,6}))'
+for _ in range(n):
+    for match in re.finditer(pattern,input(), flags=re.IGNORECASE):
+        print(match.group(0))
+
 
 
 
